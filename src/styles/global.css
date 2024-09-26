@@ -56,14 +56,14 @@
     /* FONTS */
     @font-face {
         font-family: "abril_extra_bold";
-        src: url("fonts/abril_display_extrabold-webfont.woff2") format("woff2");
+        src: url("../fonts/abril_display_extrabold-webfont.woff2") format("woff2");
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: "abril_fat_face";
-        src: url("fonts/abril_fatface-webfont.woff2") format("woff2");
+        src: url("../fonts/abril_fatface-webfont.woff2") format("woff2");
         font-weight: normal;
         font-style: normal;
     }
