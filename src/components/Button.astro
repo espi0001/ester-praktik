@@ -1,0 +1,67 @@
+---
+import "../styles/style.css";
+const { style, linket } = Astro.props;
+---
+
+<a href={linket} target="_blank" class={style}><slot /></a>
+
+<style>
+  @layer components {
+    a {
+      display: inline-block;
+      font-size: var(--font_size_small);
+      padding: 8px 20px;
+      cursor: pointer;
+      transition: all 0.55s ease;
+    }
+
+    a:hover {
+      transform: scale(1.04);
+    }
+
+    .primary {
+      background: var(--color_white);
+      color: var(--color_black);
+    }
+    .primary:hover {
+      background: var(--color_black);
+      border: 1px solid var(--color_white);
+      color: var(--color_white);
+      text-decoration: none;
+    }
+
+    .secondary {
+      background: var(--color_black);
+      border: 1px solid var(--color_blue);
+      color: var(--color_white);
+    }
+    .secondary:hover {
+      background: var(--color_blue);
+      color: var(--color_white);
+      text-decoration: none;
+    }
+
+    .tredje {
+      background: transparent;
+      border: 1px solid var(--color_blue);
+      color: var(--color_white);
+    }
+    .tredje:hover {
+      background: var(--color_blue);
+      color: var(--color_white);
+      text-decoration: none;
+    }
+
+    @media screen and (min-width: 768px) {
+      a {
+        font-size: var(--font_size_regular);
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      a {
+        font-size: var(--font_size_regular);
+      }
+    }
+  }
+</style>
