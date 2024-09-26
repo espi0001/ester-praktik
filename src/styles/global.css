@@ -73,6 +73,7 @@
         max-width: 1600px;
         display: grid;
         grid-template-columns: var(--layout-grid);
+        margin: auto;
     }
 
     body {
@@ -84,6 +85,7 @@
         color: var(--sort);
         font-weight: normal;
         text-decoration: none;
+
     }
 
 

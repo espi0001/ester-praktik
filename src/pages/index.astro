@@ -4,21 +4,21 @@ import Overlay from "../components/Overlay.astro";
 import { Icon } from "astro-icon/components";
 import ScrollingContainer from "../components/ScrollingContainer.astro";
 import { cardContent } from "../data/card-content.js";
+
+import { Image } from "astro:assets";
+import ester from "../assets/images/ester.avif";
 ---
 
 <MainLayout title="Forside">
   <Overlay header="Ester Piazza-Koldbye" />
-  <!-- <Overlay header="Om mig" /> -->
 
   <section class="om-mig" id="info">
-    <article>
-      <div class="intro">
-        <img src="https://espi0001.github.io/portfolio_site/img/om_mig/om_mig3.png" alt="mig" />
-        <div>
-          <h2>About me</h2>
-          <p>Jeg er en målrettet og arbejdsom MMD-studerende på 3. semester ved KEA, hvor jeg har valgt Frontend som valgfag med fokus på kodning. Jeg arbejder selvstændigt og bevarer overblikket, selv i pressede og stressede situationer. Jeg har et skarpt øje for detaljer og er god til at observere, hvilket gør mig i stand til at tage ansvar og uddelegere opgaver effektivt.</p>
-          <p>Gennem min tid som vejleder på skolen har jeg fået erfaring med planlægning af store arrangementer, håndtering af sociale medier og evnen til at arbejde under stramme deadlines. Jeg trives i samarbejde og er ikke bange for at tage ansvar for større projekter.</p>
-        </div>
+    <article class="intro">
+      <Image src={ester} alt="Ester Piazza-Koldbye" />
+      <div>
+        <h2>About me</h2>
+        <p>Jeg er en målrettet og arbejdsom MMD-studerende på 3. semester ved KEA, hvor jeg har valgt Frontend som valgfag med fokus på kodning. Jeg arbejder selvstændigt og bevarer overblikket, selv i pressede og stressede situationer. Jeg har et skarpt øje for detaljer og er god til at observere, hvilket gør mig i stand til at tage ansvar og uddelegere opgaver effektivt.</p>
+        <p>Gennem min tid som vejleder på skolen har jeg fået erfaring med planlægning af store arrangementer, håndtering af sociale medier og evnen til at arbejde under stramme deadlines. Jeg trives i samarbejde og er ikke bange for at tage ansvar for større projekter.</p>
       </div>
     </article>
   </section>
@@ -101,9 +101,8 @@ import { cardContent } from "../data/card-content.js";
     grid-column: content;
     display: grid;
   }
-  .om-mig {
-    background: var(--brun);
-  }
+
+  .om-mig,
   .projekter {
     background: var(--sort);
     article h3,
@@ -115,6 +114,13 @@ import { cardContent } from "../data/card-content.js";
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-s-m);
+    color: var(--baggrund);
+    p {
+      color: var(--baggrund);
+    }
+    @media (width < 600px) {
+      display: block;
+    }
   }
 
   .skills {
