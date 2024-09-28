@@ -81,16 +81,12 @@ import ester from "../assets/images/ester.avif";
   <ScrollingContainer cardContent={cardContent} />
 
   <article class="content">
-    <div class="mails">
-      <div class="mails_grid">
-        <h2>Contact me</h2>
+    <h2>Contact me</h2>
 
-        <div class="kontakt_oplysninger">
-          <a href="https://www.linkedin.com/in/ester-piazza-koldbye-3698181b9/" target="_blank"> <Icon name="linked" /> <span>Ester Piazza-Koldbye</span></a>
-          <a href="mailto:ester.piazza.koldbye@gmail.com?"> <Icon name="mail" /> <span>ester.piazza.koldbye@gmail.com</span></a>
-          <a href="tel:+4528923400"> <Icon name="phone" /> <span>+45 28 92 34 00</span></a>
-        </div>
-      </div>
+    <div class="kontakt_oplysninger">
+      <a href="https://www.linkedin.com/in/ester-piazza-koldbye-3698181b9/" target="_blank"> <Icon name="linked" /> <span>Ester Piazza-Koldbye</span></a>
+      <a href="mailto:ester.piazza.koldbye@gmail.com?"> <Icon name="mail" /> <span>ester.piazza.koldbye@gmail.com</span></a>
+      <a href="tel:+4528923400"> <Icon name="phone" /> <span>+45 28 92 34 00</span></a>
     </div>
   </article>
 </MainLayout>
@@ -125,8 +121,10 @@ import ester from "../assets/images/ester.avif";
     p {
       color: var(--baggrund);
     }
-    @media (width < 600px) {
-      display: block;
+
+    @media (width < 768px) {
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -134,20 +132,31 @@ import ester from "../assets/images/ester.avif";
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: var(--space-s-m);
+    @media (width < 768px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
-  .mails {
+  .content {
     display: flex;
     flex-direction: column;
   }
 
   .kontakt_oplysninger {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs-s);
     a {
       display: flex;
+
+      align-items: center;
     }
     svg {
-      width: 24px;
-      height: 24px;
-      margin-right: 12px;
+      width: 60px;
+
+      @media (width < 480px) {
+        width: 40px;
+      }
     }
   }
 </style>

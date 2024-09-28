@@ -107,6 +107,7 @@
     h1 {
         font-size: var(--step-7);
 
+
         @media (width < 768px) {
             font-size: var(--step-6);
         }
@@ -118,6 +119,7 @@
 
     h2 {
         font-size: var(--step-6);
+        margin-bottom: var(--space-xs);
 
         @media (width < 768px) {
             font-size: var(--step-5);
@@ -130,6 +132,7 @@
 
     h3 {
         font-size: var(--step-5);
+        margin-bottom: var(--space-2xs);
 
         @media (width < 768px) {
             font-size: var(--step-4);
