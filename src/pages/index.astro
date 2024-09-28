@@ -9,7 +9,7 @@ import { Image } from "astro:assets";
 import ester from "../assets/images/ester.avif";
 ---
 
-<MainLayout title="Forside">
+<MainLayout title="Profil | Ester Piazza-Koldbye">
   <Overlay header="Ester Piazza-Koldbye" />
 
   <section class="om-mig" id="info">
@@ -19,15 +19,11 @@ import ester from "../assets/images/ester.avif";
         <h2>About me</h2>
         <p>
           My name is Ester, and I’m a passionate Multimedia Design student at KEA, currently in my 3rd semester, with a focus on frontend development. Coding is one of my key interests, and I’m driven by the desire to create clean, efficient, and visually compelling digital solutions. I have a keen attention to detail and a strong ability to maintain an overview, which allows me to confidently take on responsibility and delegate tasks effectively.
-
           <br />
           <br />
-
           Alongside my studies, I have experience as an intro guide at KEA, where I manage our official intro guide Instagram profile and help organize large-scale events. These experiences have enhanced my skills in planning, social media management, and teamwork, all while handling tight deadlines.
-
           <br />
           <br />
-
           I thrive in collaborative environments and appreciating the learning process that comes from teamwork.
         </p>
       </div>
@@ -95,10 +91,6 @@ import ester from "../assets/images/ester.avif";
           <a href="tel:+4528923400"> <Icon name="phone" /> <span>+45 28 92 34 00</span></a>
         </div>
       </div>
-
-      <!-- <div class="billede">
-        <img src="https://espi0001.github.io/portfolio_site/img/om_mig/om_mig3.png" alt="mig" />
-      </div> -->
     </div>
   </article>
 </MainLayout>
@@ -112,6 +104,9 @@ import ester from "../assets/images/ester.avif";
   article {
     grid-column: content;
     display: grid;
+    padding: var(--space-s-m);
+    @media (width < 600px) {
+    }
   }
 
   .om-mig,
@@ -138,21 +133,13 @@ import ester from "../assets/images/ester.avif";
   .skills {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-s-m);
+    row-gap: var(--space-s-m);
   }
   .mails {
     display: flex;
     flex-direction: column;
+  }
 
-    padding-top: 80px;
-    margin-bottom: 125px;
-  }
-  .content {
-    padding-top: 8%;
-  }
-  h1 {
-    padding-bottom: 44px;
-  }
   .kontakt_oplysninger {
     a {
       display: flex;
@@ -161,21 +148,6 @@ import ester from "../assets/images/ester.avif";
       width: 24px;
       height: 24px;
       margin-right: 12px;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    .mails {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 80px;
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    .mails {
-      padding-top: 125px;
-      grid-template-columns: 1fr 1fr;
     }
   }
 </style>

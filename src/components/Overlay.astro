@@ -5,14 +5,10 @@ import { Icon } from "astro-icon/components";
 ---
 
 <div id="overlay"></div>
-<article class="hero">
-  <div class="content">
-    <div class="text" id="herotitle">
-      <h1>{header}</h1>
-      <h6>Fronted developer</h6>
-      <a href="#info" class="listen-link"> <Icon name="arrow-down" /></a>
-    </div>
-  </div>
+<article class="hero" id="herotitle">
+  <h1>{header}</h1>
+  <h6>Fronted developer</h6>
+  <a href="#info" class="listen-link"> <Icon name="arrow-down" /></a>
 </article>
 
 <style>
@@ -27,18 +23,18 @@ import { Icon } from "astro-icon/components";
       z-index: 9999;
     }
     .hero {
-      background-size: cover;
-      aspect-ratio: 16 / 9;
+      /* background-size: cover;
+      aspect-ratio: 16 / 9; */
+      height: 100vh;
       grid-column: content;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-      .text {
-        margin: auto;
-        padding-top: 18%;
-
-        h1 {
-          font-size: var(--step-7);
-        }
+      @media (width < 480px) {
+        height: 30vh;
       }
     }
 
@@ -47,14 +43,14 @@ import { Icon } from "astro-icon/components";
     }
 
     .listen-link {
-      padding-top: 5%;
-      margin: auto;
+      /* padding-top: 5%; */
+      /* margin: auto; */
       display: flex;
       justify-content: center;
       animation: bounce_kf 2s infinite;
       svg {
         align-self: center;
-        max-width: 50px;
+        width: 50px;
         color: var(--sort);
       }
     }
@@ -68,7 +64,7 @@ import { Icon } from "astro-icon/components";
         translate: 0;
       }
       40% {
-        translate: 0 -30px;
+        translate: 0 -25px;
       }
       60% {
         translate: 0 -15px;

@@ -35,6 +35,8 @@
         --space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
 
 
+        --space-xs-m: clamp(0.875rem, 0.5272rem + 1.7391vw, 1.875rem);
+
         --font_body: "Roboto", sans-serif;
         --font_header: "abril_extra_bold", sans-serif;
 
@@ -74,17 +76,18 @@
         display: grid;
         grid-template-columns: var(--layout-grid);
         margin: auto;
+        /* row-gap: var(--space-m); */
     }
 
     body {
         list-style: none;
         background: var(--baggrund);
-        line-height: 1.5;
         font-size: var(--step-0);
         font-family: var(--font_body);
         color: var(--sort);
         font-weight: normal;
         text-decoration: none;
+
 
     }
 
@@ -99,12 +102,42 @@
         font-family: var(--font_header);
     }
 
+
+
+    h1 {
+        font-size: var(--step-7);
+
+        @media (width < 768px) {
+            font-size: var(--step-6);
+        }
+
+        @media (width < 480px) {
+            font-size: var(--step-3);
+        }
+    }
+
     h2 {
         font-size: var(--step-6);
+
+        @media (width < 768px) {
+            font-size: var(--step-5);
+        }
+
+        @media (width < 480px) {
+            font-size: var(--step-3);
+        }
     }
 
     h3 {
         font-size: var(--step-5);
+
+        @media (width < 768px) {
+            font-size: var(--step-4);
+        }
+
+        @media (width < 480px) {
+            font-size: var(--step-2);
+        }
     }
 
     h4 {

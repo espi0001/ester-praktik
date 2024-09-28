@@ -4,9 +4,7 @@ const { cardContent } = Astro.props;
 
 <section class="scrolling">
   <div class="scrolling-top">
-    <div class="text">
-      <h3>My projects</h3>
-    </div>
+  <h3>My projects</h3>
     <div class="buttons">
       <button class="scroll-arrow left" id="scroll-left">&larr;</button>
       <button class="scroll-arrow right" id="scroll-right">&rarr;</button>
@@ -39,9 +37,8 @@ const { cardContent } = Astro.props;
       display: grid;
       grid-template-columns: var(--layout-grid2);
       grid-template-rows: auto auto;
-      row-gap: var(--space-2xl);
-      padding: var(--space-xl) 0;
-
+      padding: var(--space-s-m);
+      row-gap: var(--space-s-m);
       background: var(--sort);
       color: var(--baggrund);
       @media (width < 600px) {
@@ -75,14 +72,7 @@ const { cardContent } = Astro.props;
         grid-row: 1;
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
-
-        .text {
-          max-width: 50%;
-          .icon {
-            width: 100px;
-            margin-bottom: var(--space-xs);
-          }
+        align-items: center;
         }
         .buttons {
           display: flex;
@@ -125,7 +115,7 @@ const { cardContent } = Astro.props;
 
     .full-width {
       display: flex;
-      gap: var(--space-xs);
+      gap: var(--space-s-m);
       overflow-x: auto;
       list-style: none;
       margin-top: 0;
@@ -136,14 +126,14 @@ const { cardContent } = Astro.props;
         background: var(--baggrund);
         color: var(--sort);
         border-radius: 30px;
-        padding: 2.75rem 2.1875rem;
+        padding: var(--space-s-m);
         align-self: start;
         display: grid;
         cursor: pointer;
         transition: all 0.4s ease-in-out;
 
         &:hover {
-          transform: scale(1.04);
+          transform: scale(0.95);
         }
 
         @media (width < 600px) {
