@@ -10,12 +10,10 @@ import { Icon } from "astro-icon/components";
     <div class="sociale_links">
       <a href="https://www.linkedin.com/in/ester-piazza-koldbye-3698181b9/" target="_blank"> <Icon name="linked" /></a>
       <a href="https://github.com/espi0001" target="_blank"> <Icon name="github" /></a>
-      <a href="mailto:ester.piazza.koldbye@gmail.com?" target="_blank"> <Icon name="mail" /></a>
+      <a href="mailto:ester.piazza.koldbye@gmail.com?"> <Icon name="mail" /></a>
       <a href="tel:+4528923400" target="_blank"> <Icon name="phone" /></a>
     </div>
-
     <hr />
-
     <p>&copy; 2024 Ester Piazza-Koldbye</p>
   </div>
 </footer>
@@ -23,28 +21,20 @@ import { Icon } from "astro-icon/components";
 <style>
   @layer components {
     footer {
-      align-items: center;
-      grid-column: content;
-
       display: grid;
       grid-template-columns: var(--layout-grid);
       padding: var(--space-s-m);
-
       background: var(--baggrund);
       color: var(--sort);
+      align-items: center;
     }
 
     .content {
       display: flex;
-      grid-column: content;
       flex-direction: column;
+      grid-column: content;
       align-items: center;
       gap: var(--space-s-m);
-
-      hr {
-        width: 100%;
-        color: var(--sort);
-      }
     }
     .logo {
       max-width: 55px;
@@ -66,12 +56,17 @@ import { Icon } from "astro-icon/components";
         height: auto;
 
         svg {
-          transition: all 0.4s ease-in-out;
+          transition: color 0.4s ease-in-out;
           &:hover {
             color: var(--brun);
           }
         }
       }
+    }
+    hr {
+      width: 100%;
+      border: none;
+      border-top: 1px solid var(--sort);
     }
 
     p {

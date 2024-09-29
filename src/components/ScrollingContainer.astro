@@ -16,12 +16,12 @@ const { cardContent } = Astro.props;
       cardContent.map((card) => (
         <li>
           <a href={card.link} target="_blank">
-            <img src={card.image} alt="" />
-            <h6>{card.title}</h6>
+            <img src={card.image} alt={card.title} />
+            <h4>{card.title}</h4>
             <p>{card.body}</p>
           </a>
 
-          <a href={card.link} target="_blank">
+          <a href={card.link} target="_blank" class="project-link">
             Link to the project
           </a>
         </li>
@@ -42,27 +42,80 @@ const { cardContent } = Astro.props;
       background: var(--sort);
       color: var(--baggrund);
 
-      /* @media (width < 600px) {
-        padding: var(--space-xs);
-      } */
       > ul {
         scroll-snap-type: x mandatory;
         grid-column: 1 / -1;
         grid-row: 2;
+        display: flex;
+        gap: var(--space-s-m);
+        overflow-x: auto;
+        list-style: none;
         padding-inline: max(1rem, 50% - var(--content) / 10px);
+        margin: 0;
 
         li {
+          flex-basis: min(500px, 90%);
+          flex-shrink: 0;
+          background: var(--baggrund);
+          color: var(--sort);
+          border-radius: 30px;
+          padding: var(--space-s-m);
+          transition: all 0.4s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-xs-s);
+          cursor: pointer;
           scroll-snap-align: center;
+          /* align-self: start; */
           &:first-child {
             margin-left: calc(50% - var(--content) / 2);
-            @media (width < 600px) {
-              margin-left: 0px;
-            }
           }
           &:last-child {
             margin-right: calc(50% - var(--content) / 2);
-            @media (width < 600px) {
-              margin-right: 0px;
+          }
+          &:hover {
+            transform: scale(0.95);
+          }
+          a:first-of-type {
+            h4 {
+              margin-top: var(--space-xs-s);
+            }
+            p {
+              margin-top: var(--space-3xs-2xs);
+            }
+          }
+
+          a.project-link {
+            transition: all 0.4s ease-out;
+            margin-top: var(--space-3xs-2xs);
+            font-weight: bold;
+            position: relative;
+            display: block;
+          }
+
+          a.project-link::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background-color: var(--sort);
+            left: 0;
+            bottom: -2px;
+            transition: width 0.3s ease;
+          }
+
+          a.project-link:hover::after {
+            width: 37%;
+          }
+          @media (width < 600px) {
+            li {
+              flex-basis: min(300px, 90%);
+            }
+
+            li:first-child,
+            li:last-child {
+              margin-left: 0;
+              margin-right: 0;
             }
           }
         }
@@ -77,71 +130,19 @@ const { cardContent } = Astro.props;
 
         .buttons {
           display: flex;
-          gap: var(--space-s);
+          gap: var(--space-xs-s);
           .scroll-arrow {
             background: var(--baggrund);
             color: var(--sort);
             padding: 11px 14px;
             border-radius: 50px;
             cursor: pointer;
-            align-items: center;
-            justify-content: center;
             transition: all 0.4s ease-in-out;
 
             &:hover {
               background-color: var(--brun);
               color: var(--sort);
             }
-          }
-        }
-      }
-    }
-
-    /* scrolling stop */
-
-    .full-width {
-      display: flex;
-      gap: var(--space-s-m);
-      overflow-x: auto;
-      list-style: none;
-      margin-top: 0;
-
-      li {
-        flex-basis: min(500px, 90%);
-        flex-shrink: 0;
-        background: var(--baggrund);
-        color: var(--sort);
-        border-radius: 30px;
-        padding: var(--space-s-m);
-        align-self: start;
-        cursor: pointer;
-        transition: all 0.4s ease-in-out;
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-xs-s);
-        a:first-of-type {
-          h6 {
-            margin-top: var(--space-xs);
-          }
-          p {
-            margin-top: var(--space-3xs);
-          }
-        }
-        &:hover {
-          transform: scale(0.95);
-        }
-
-        @media (width < 600px) {
-          flex-basis: min(300px, 90%);
-        }
-
-        a:last-of-type {
-          transition: all 0.4s ease-out;
-          margin-top: var(--space-3xs);
-          font-weight: bold;
-
-          &:hover {
-            text-decoration: underline;
           }
         }
       }
@@ -155,8 +156,7 @@ const { cardContent } = Astro.props;
     const leftButton = document.getElementById("scroll-left");
     const rightButton = document.getElementById("scroll-right");
 
-    const cardWidth = 400; // Width of each card
-    const scrollAmount = cardWidth + 16; // cardWidth + gap between cards
+    const scrollAmount = container.querySelector("li").offsetWidth + 16; // Dynamically calculate card width + gap
 
     leftButton.addEventListener("click", () => {
       container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
