@@ -10,10 +10,13 @@
   <nav>
     <ul class="menu">
       <hr />
-      <li><a href="/om-mig">Om mig</a></li>
+      <li><a href="#info">About me</a></li>
       <hr />
-      <li><a href="/kontakt">Kontakt</a></li>
+      <li><a href="#skills">Skills</a></li>
       <hr />
+      <li><a href="#projects">Projects</a></li>
+      <hr />
+      <li><a href="#contact">Contact me</a></li>
     </ul>
 
     <div class="burger">
@@ -31,7 +34,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px;
-      font-family: var(--font_header);
+      font-size: var(--step-1);
 
       @media (width > 480px) {
         position: absolute;
@@ -42,6 +45,7 @@
       z-index: 5;
       a {
         color: var(--sort);
+
         font-size: var(--step-2);
         font-family: var(--font_header);
       }
@@ -68,17 +72,24 @@
 
       a {
         display: block;
-        padding: 10px;
-        color: var(--sort);
-        font-size: var(--step-1);
-        text-decoration: none;
-        transition: color 0.3s;
         text-align: end;
-        font-weight: normal;
+        position: relative;
+        font-size: var(--step-0);
+      }
 
-        &:hover {
-          color: var(--color_blue);
-        }
+      a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        background-color: var(--sort);
+        left: 0;
+        bottom: -2px;
+        transition: width 0.3s ease;
+      }
+
+      a:hover::after {
+        width: 100%;
       }
     }
 

@@ -30,7 +30,7 @@ import ester from "../assets/images/ester.avif";
     </article>
   </section>
 
-  <article class="skills">
+  <article class="skills" id="skills">
     <div>
       <h3>Coding</h3>
       <ul>
@@ -80,7 +80,7 @@ import ester from "../assets/images/ester.avif";
 
   <ScrollingContainer cardContent={cardContent} />
 
-  <article class="content">
+  <!-- <article class="content" id="contact">
     <h2>Contact me</h2>
 
     <div class="kontakt_oplysninger">
@@ -88,7 +88,7 @@ import ester from "../assets/images/ester.avif";
       <a href="mailto:ester.piazza.koldbye@gmail.com?"> <Icon name="mail" /> <span>ester.piazza.koldbye@gmail.com</span></a>
       <a href="tel:+4528923400"> <Icon name="phone" /> <span>+45 28 92 34 00</span></a>
     </div>
-  </article>
+  </article> -->
 </MainLayout>
 
 <style>
@@ -101,6 +101,7 @@ import ester from "../assets/images/ester.avif";
     grid-column: content;
     display: grid;
     padding: var(--space-s-m);
+
     @media (width < 600px) {
     }
   }
@@ -148,9 +149,9 @@ import ester from "../assets/images/ester.avif";
     gap: var(--space-xs-s);
     a {
       display: flex;
-
       align-items: center;
     }
+
     svg {
       width: 60px;
 

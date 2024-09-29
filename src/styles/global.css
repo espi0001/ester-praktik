@@ -170,7 +170,10 @@
     a {
         cursor: pointer;
         transition: all 0.55s ease;
+
+
     }
+
 
     hr {
         border-width: 0.1px;

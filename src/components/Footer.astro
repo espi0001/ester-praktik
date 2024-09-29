@@ -4,18 +4,19 @@ import { Icon } from "astro-icon/components";
 
 <footer>
   <div class="content">
-    <hr />
     <div class="logo">
       <a href="/"> <Icon name="LogoWhite" /></a>
     </div>
     <div class="sociale_links">
       <a href="https://www.linkedin.com/in/ester-piazza-koldbye-3698181b9/" target="_blank"> <Icon name="linked" /></a>
       <a href="https://github.com/espi0001" target="_blank"> <Icon name="github" /></a>
-      <a href="https://www.linkedin.com/in/ester-piazza-koldbye-3698181b9/" target="_blank"> <Icon name="house" /></a>
       <a href="mailto:ester.piazza.koldbye@gmail.com?" target="_blank"> <Icon name="mail" /></a>
       <a href="tel:+4528923400" target="_blank"> <Icon name="phone" /></a>
     </div>
+
     <hr />
+
+    <p>&copy; 2024 Ester Piazza-Koldbye</p>
   </div>
 </footer>
 
@@ -29,8 +30,8 @@ import { Icon } from "astro-icon/components";
       grid-template-columns: var(--layout-grid);
       padding: var(--space-s-m);
 
-      background: var(--sort);
-      color: var(--baggrund);
+      background: var(--baggrund);
+      color: var(--sort);
     }
 
     .content {
@@ -48,10 +49,9 @@ import { Icon } from "astro-icon/components";
     .logo {
       max-width: 55px;
       height: auto;
-      color: var(--baggrund);
 
       a {
-        color: var(--baggrund);
+        color: var(--sort);
       }
     }
     .sociale_links {
@@ -60,9 +60,9 @@ import { Icon } from "astro-icon/components";
       align-items: center;
       justify-content: center;
       a {
-        background-color: var(--sort);
+        background-color: var(--baggrund);
         border-radius: 50px;
-        width: 30px;
+        width: 40px;
         height: auto;
 
         svg {
@@ -72,6 +72,10 @@ import { Icon } from "astro-icon/components";
           }
         }
       }
+    }
+
+    p {
+      color: var(--sort);
     }
   }
 </style>

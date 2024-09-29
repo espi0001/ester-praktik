@@ -8,7 +8,7 @@ import { Icon } from "astro-icon/components";
 <article class="hero" id="herotitle">
   <h1>{header}</h1>
   <h6>Fronted developer</h6>
-  <a href="#info" class="listen-link"> <Icon name="arrow-down" /></a>
+  <button id="scrollBtn" class="scroll-btn"><Icon name="arrow-down" /></button>
 </article>
 
 <style>
@@ -23,8 +23,6 @@ import { Icon } from "astro-icon/components";
       z-index: 9999;
     }
     .hero {
-      /* background-size: cover;
-      aspect-ratio: 16 / 9; */
       height: 100vh;
       grid-column: content;
       text-align: center;
@@ -32,6 +30,7 @@ import { Icon } from "astro-icon/components";
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
 
       @media (width < 480px) {
         height: 30vh;
@@ -42,9 +41,7 @@ import { Icon } from "astro-icon/components";
       z-index: 1;
     }
 
-    .listen-link {
-      /* padding-top: 5%; */
-      /* margin: auto; */
+    button {
       display: flex;
       justify-content: center;
       animation: bounce_kf 2s infinite;
@@ -126,5 +123,12 @@ import { Icon } from "astro-icon/components";
         "-=0.3"
       );
     }
+  });
+
+  document.getElementById("scrollBtn").addEventListener("click", function () {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
   });
 </script>
